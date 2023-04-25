@@ -1,33 +1,41 @@
-# React Native Task
+# React Native assignment
 
-News searching and saving application.
+Create a simple React Native app according to the specifications given below. Aim to spend no more than 3-4 hours on this assignment, **even if that means the result is incomplete or non-functional**. The intent is to review your efforts together, discussing your process, solution direction, architectural choices and code implementation.
 
-## Summary
+Git version management should be used for keeping a commit history with the project, which can be submitted via GitHub repo or emailed in a zip folder.
 
-Create a react native application that via user input, can search the news API for any keyword, see the result of a search
-in a list and can save news articles to read while offline. In other words, the app should consist of 2 screens, 1. being
-the initial page where the user can type in a search input field a keyword to search for a news article and get presented
-with news articles based on that key and 2. a page where the user can see all the news articles they have saved which can
-be viewed and read even if offline.
+## Comicat App
 
-## Guide & Suggestions
+The Comicat App is an app that allows users to create four-panel cat themed comics in minutes on their mobile phone or tablet device. Users can create new comics panel by panel, choosing a random cat picture and adding a fitting caption. They can scroll through a list of previously created comics, view each of them full size and delete those that they no longer wish to store.
 
-- Create a new react native project
+### Requirements
 
-- Recommended api for news is https://newsapi.org since it is easy and free to use, just go the url and click on "Get API Key".
-As soon as you fill the information they require you should get your API key.
+- Comics are stored in memory during a session, but do not need to persist after the app is closed. (no backend or local storage required). 
+- Since there are no designs other than the added wireframes, we will not focus on appearance. 
+- The app should work on iOS and Android devices.
 
-- To fetch news from the api we recommend using the library [axios](https://github.com/axios/axios) and
-the news url would be: `http://newsapi.org/v2/everything?apiKey=YOUR_API_KEY&q=USER_SEARCH_INPUT`.
+- The app has a landing screen that includes:
+	- A scrolling list of saved comics from temporary storage. Pressing an item opens the show screen for that specific item.
+	- A button that opens the comic creation flow. 
 
-- To store the news articles the user decides to save, please use store management [Redux](https://redux.js.org) and for store persistance you can use [redux-persist](https://github.com/rt2zz/redux-persist).
+- The app has a comic show screen that includes:
+	- A 2x2 grid of comic panels, each showing an image with an overlay that shows the text that was chosen with the image.
+	- A button to return to the landing screen.
+	- A button to delete this comic from temporary storage, removing it from the list on the landing screen.
 
-- The user should be able to go to a specific screen and see all their news articles they have saved even if they
- are offline. You can use the library [react-navigation](https://reactnavigation.org) to manage the screens and navigation,
- unless you want to make the 2 screens tabs.
+- The app has a comic creation flow that includes:
+	- Multiple tabs/screens that the user can click through.
+	- Four tabs containing a panel creation screen.
+	- One tab containing the comic show screen with the panels that were created in the previous tabs, minus the delete button.
+	- A button to return to the landing screen and cancel the creation process (half made comics are not added to the list).
+	- Navigation buttons to return to the previous tab (if not on the first) or go to the next tab (if not on the last).
+	- A save button on the last tab, which will add the comic to the index list and return to the landing screen.
 
-## Project Assumptions.
+- The app has a panel creation screen that includes:
+	- A random cat image, taken from https://thecatapi.com
+	- A button to fetch a different cat image.
+	- A text input to add a caption for the image.
 
-- The project should take approximately 8hrs.
-- Git should be used for keeping a commit history with the project.
-- Project can be presented via GitHub or a zip folder.
+### Wireframes
+
+![wireframes](./wireframes.jpg)
